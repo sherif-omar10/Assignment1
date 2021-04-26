@@ -6,6 +6,10 @@ int id;
 int birthdate_day,birthdate_month,bithdate_year;
 int scoreOf_lastyear;
 };
+struct node {
+    struct student data;
+    struct node *next;
+};
 int n,i;
 struct node *new;
 struct node *head;
@@ -14,24 +18,8 @@ struct student insert(struct student y);
 void insert_first (struct student x);
 void insert_end (struct student x);
 void insert_middle (struct student x,int y);
-void intro()
-{
-	printf("\n\tCairo University");
-	printf("\n\tFaculty of Engineering");
-	printf("\n\tElectronics and Communications Engineering Department 2nd Year \n\n\n");
-	printf("\t\t\t\t\t\"Assignment #1\"\n\n" );
-    printf( "\t\t\t\t\t*************************\n");
-	printf( "\t\t\t\t\tCoded By :\n\n" );
-	printf( "\t\t\t\t\tYasmin\n" );//complete your name ^^
-	printf("\t\t\t\t\tYomna\n" );//complete your name ^^
-	printf( "\t\t\t\t\tSherif Omar Bkhiet\n\n" );
-	printf( "\t\t\t\t\t*************************");
-	printf("\n\n\n\tPress Enter To Continue\n\n");
-	getc(stdin);
-}
 int main()
-{
-    n=0;
+{n=0;
 int m;
 int k;
 struct student s;
@@ -45,42 +33,10 @@ for (i=1;i<=m;i++)
 }
 insert_first (s);
 insert_middle(s,m);
-intro();
-char c;
-	do
-	{
-		printf( "\n\n\n\tMAIN MENU");
-		printf( "\n\n\t1. INSERT FIRST");
-		printf( "\n\n\t2. INSERT END");
-		printf( "\n\n\t3. INSERT MIDDLE");
-		printf( "\n\n\t4. EXIT");
-		printf( "\n\n\tPlease Select Your Option (1-4) ");
-		c = _getche();
-		switch (c)
-		{
-		case '1':
-        printf( "\nINSERT FIRST\n");//put the first function
-			break;
-		case '2':
-			printf( "\nINSERT END\n");//put the second function
-			break;
-		case '3':
-		    printf( "\nINSERT MIDDLE\n");//put the 3rd function
-			break;
-		case '4':
-			break;
-		default:printf("\a");
-		}
-	} while (c != '4');
 
 
     return 0;
 }
-struct node {
-    struct student data;
-    struct node *next;
-};
-
 void insert_first (struct student x)
 {
     if(n==0)
@@ -169,3 +125,4 @@ n++;
  }
 
 }
+
